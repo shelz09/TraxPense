@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>TraxPense</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-sack-dollar dollar"></i><span>Traxpense</span>
+        </div>
+        <div class="user hide" title="User" onclick="showLogout()">
+            <i class="fa-solid fa-user user-icon"></i><span id="nav-user">User</span>
+        </div>
+        <div class="menu hide" onclick="showLogout()" title="Menu"><!--add hide-->
+            <button class="" id="menuBtn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+        </div>
+    </div>
+    <div class="logout-popup">
+        <h2 class="UserName">User</h2><hr>
+        <button onclick="logOut()">Log Out</button>
+    </div>
+    <div class="SignUp-section">
+        <div class="signup-container">
+            <div class="signUPheading">
+                <h1>Welcome to TraxPense!</h1>
+            </div>
+            <form class="inputSection" action="">
+                <input type="text" id="username" placeholder="Enter Username">
+                <input type="email" id="useremail" placeholder="Enter Email">
+                <div class="password">
+                    <input type="password" id="userpass" placeholder="Enter Password"><button id="passBtn"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            </form>
+            <div class="submitSection">
+                <button id="loginBtn">Login</button>
+                <button id="SignUpBtn">SignUp</button>
+            </div>
+        </div>
+    </div>
+    <div class="main"> <!-- add hide -->
+        <div class="money-box">
+            <div class="income-box">
+                <div class="img-box">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                </div>
+                <div class="txt-box">
+                    <h1>Income</h1>
+                    <div class="txt-inc">
+                        <p>Rs. </p><span id="showIncome">0</span>
+                    </div>
+                    <button id="addincome" onclick="HandleIncome()">Add</button>
+                </div>
+            </div>
+            <div class="expense-box">
+                <div class="img-box">
+                    <i class="fa-solid fa-down-long"></i>
+                </div>
+                <div class="txt-box">
+                    <h1>Expense</h1>
+                    <div class="txt-inc">
+                        <p>Rs. </p><span id="showExpense">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="balance-box">
+                <div class="img-box">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+                <div class="txt-box">
+                    <h1>Balance</h1>
+                    <div class="txt-inc">
+                        <p>Rs. </p><span id="showBalance">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="incomeform">
+            <input id="incomeinput" type="text" placeholder="Enter Income "><button type="button" id="submitincome">Add</button>
+        </div>
+        <div class="add-expense hide">
+            <button id="add-expense-btn"><i class="fa-solid fa-plus"></i>Add Expense</button>
+        </div>
+        <div class="input-page">
+            <form class="input-field">
+                <div class="category">
+                    <select name="Category" id="category" placeholder="Category">
+                        <option value="Transportation">Transportation</option>
+                        <option value="Dining Out">Dining Out</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Lend">Lend</option>
+                        <option value="Groceries">Groceries</option>
+                        <option value="Clothes & Laundary">Clothes & Laundary</option>
+                    </select>
+                </div>
+                <div class="amount">
+                    <input type="text" placeholder="Amount" id="expense-amnt">
+                </div>
+                <div class="description">
+                    <textarea id="description-input" name="message" rows="2" cols="30" placeholder="Decription(optional)"></textarea>
+                </div>
+                <div class="date">
+                    <input id="date-input" type="date">
+                </div>
+                <div class="add">
+                    <button id="addExpenseBtn">Add</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="main-table hide">
+            <table id="expensetable">
+                <thead>
+                    <tr>
+                        <th>Sr.</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="expensebody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="footer"></div>
+    <script src="App.js"></script>
+</body>
+</html>

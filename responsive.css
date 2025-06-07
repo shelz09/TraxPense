@@ -1,0 +1,27 @@
+@media (max-width:534px){
+    .inputSection input{
+        width:250px;
+    }
+    #userpass{
+        width:200px;
+        margin-bottom:0;
+    }
+    .signup-container{
+        width:80%;
+    }
+
+}
+
+@media (max-width:600px){
+    .menu{
+        display: inline;
+    }
+    .user{
+        display: none;
+    }
+    .navbar{
+        padding:40px 10px;
+    }
+}
+
+
